@@ -56,7 +56,7 @@ namespace csfiddle
                 )
             );
 
-            //BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
 
         protected void Application_Start()
