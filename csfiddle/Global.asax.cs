@@ -43,8 +43,8 @@ namespace csfiddle
                     "~/Scripts/jquery-{version}.js",
                     "~/Scripts/jquery-ui-{version}.js",
                     "~/Scripts/jquery.layout.js",
-                    "~/Scripts/codemirror-2.37/lib/codemirror.js",
-                    "~/Scripts/codemirror-2.37/mode/clike/clike.js",
+                    "~/Scripts/codemirror-3.01/codemirror.js",
+                    "~/Scripts/codemirror-3.0/mode/clike.js",
                     "~/Scripts/site.js"
                 )
             );
@@ -52,7 +52,7 @@ namespace csfiddle
                 .Include(
                     "~/Content/jquery.ui.layout.css",
                     "~/Content/site.css",
-                    "~/Scripts/codemirror-2.37/lib/codemirror.css"
+                    "~/Content/codemirror-3.01/codemirror.css"
                 )
             );
 

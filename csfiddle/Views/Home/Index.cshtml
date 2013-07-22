@@ -22,6 +22,11 @@
                 {
                     @s.FieldFor(m => m.InputCode).Label(string.Empty)
                 }
+
+                using (var n = f.BeginNavigation())
+                {
+                    @n.Submit("Submit")
+                }
             }
         </div>
         <div class="ui-layout-center">
@@ -29,7 +34,7 @@
             {
                 using (var s = f.BeginSection("Result", htmlAttributes: new { @class = "fullheight" }))
                 {
-                    
+                    <pre>@Model.Result</pre>
                 }
             }
         </div>

@@ -17,10 +17,29 @@
 
 dd {
     margin: 5px;
+    display: block;
+    position:absolute;
+    height:auto;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
 }
 
 dl {
-    margin: 0;
+    margin: 5px;
+    display: block;
+    position:absolute;
+    height:auto;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+}
+
+.CodeMirror {
+    margin-top: 10px;
+    height: 100% !important;
 }
 
 .fullheight {

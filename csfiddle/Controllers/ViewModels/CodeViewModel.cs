@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace csfiddle.Controllers.ViewModels
 {
@@ -6,5 +7,8 @@ namespace csfiddle.Controllers.ViewModels
     {
         [DataType(DataType.MultilineText)]
         public string InputCode { get; set; }
+
+        [ReadOnly(true)]
+        public string Result { get; set; }
     }
 }
