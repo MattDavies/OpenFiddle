@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using csfiddle.Controllers.ViewModels;
 
 namespace csfiddle.Controllers
 {
@@ -34,11 +34,5 @@ namespace csfiddle.Controllers
             };
             return View(vm);
         }
-    }
-
-    public class CodeViewModel
-    {
-        [DataType(DataType.MultilineText)]
-        public string InputCode { get; set; }
     }
 }
