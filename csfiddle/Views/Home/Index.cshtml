@@ -1,0 +1,38 @@
+﻿@using System.Web.Optimization
+@using ChameleonForms
+@using ChameleonForms.Component
+@using ChameleonForms.Enums
+@using ChameleonForms.Templates
+@model csfiddle.Controllers.CodeViewModel
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>c#fiddle</title>
+        @Styles.Render("~/sitecss")
+        @Scripts.Render("~/sitescripts")
+    </head>
+    <body>
+        <div class="ui-layout-north"><a href="http://csfiddle.net">c#fiddle</a></div>
+        <div class="ui-layout-west">
+            @using (var f = Html.BeginChameleonForm(htmlAttributes: new HtmlAttributes(@class => "fullheight")))
+            {
+                using (var s = f.BeginSection("C#", htmlAttributes: new { @class = "fullheight"}))
+                {
+                    @s.FieldFor(m => m.InputCode).Label(string.Empty)
+                }
+            }
+        </div>
+        <div class="ui-layout-center">
+            @using (var f = Html.BeginChameleonForm(htmlAttributes: new HtmlAttributes(@class => "fullheight")))
+            {
+                using (var s = f.BeginSection("Result", htmlAttributes: new { @class = "fullheight" }))
+                {
+                    
+                }
+            }
+        </div>
+        <div class="ui-layout-south">A side project by <a href="http://twitter.com/mdaviesnet">@@mdaviesnet</a></div>
+    </body>
+</html>

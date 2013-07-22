@@ -1,0 +1,15 @@
+packages
+bin
+obj
+csx
+*.suo
+_ReSharper*
+*.user
+*.swp
+*~
+*.transformed.csdef
+*.transformed.cscfg
+*.build.csdef
+*.nupkg
+*.Cache
+*.DotSettings

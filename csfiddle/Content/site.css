@@ -1,0 +1,66 @@
+
+.ui-layout-center {
+    padding: 0;
+}
+
+.ui-layout-center > .wrapper {
+    padding: 10px;
+}
+
+.ui-layout-pane {
+    border-width: 0;
+}
+
+.ui-layout-west {
+    margin-bottom: 10px;
+}
+
+dd {
+    margin: 5px;
+}
+
+dl {
+    margin: 0;
+}
+
+.fullheight {
+    display: block;
+    position:absolute;
+    height:auto;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+    margin: 5px;
+}
+
+.ui-layout-north {
+    background-color: #fafafa;
+    background-image: linear-gradient(to bottom,#fff,#f2f2f2);
+    background-repeat: repeat-x;
+    border: 1px solid #d4d4d4;
+    border-bottom-width: 1px;
+    -webkit-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+    box-shadow: 0 1px 10px rgba(0,0,0,.1);
+}
+
+.ui-layout-south {
+    background-color: #fafafa;
+    background-image: linear-gradient(to bottom,#fff,#f2f2f2);
+    background-repeat: repeat-x;
+    border: 1px solid #d4d4d4;
+    border-top-width: 1px;
+    -webkit-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+    box-shadow: 0 1px 10px rgba(0,0,0,.1);
+    text-align: right;
+}
+
+.ui-layout-resizer-west {
+    border-width: 0 1px;
+}
+
+.ui-layout-toggler-west {
+    border-width: 0;
+}
