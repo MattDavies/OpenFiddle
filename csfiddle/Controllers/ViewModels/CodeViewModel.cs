@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace csfiddle.Controllers.ViewModels
 {
     public class CodeViewModel
     {
         [DataType(DataType.MultilineText)]
+        [AllowHtml]
         public string InputCode { get; set; }
 
         [ReadOnly(true)]
