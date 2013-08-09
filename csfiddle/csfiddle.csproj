@@ -147,7 +147,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\CompileHelper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Helpers\Sandbox.cs" />
     <Compile Include="Controllers\ViewModels\CodeViewModel.cs" />
     <Compile Include="Database\Entities\Fiddle.cs" />
     <Compile Include="Database\Repositories\FiddleRepository.cs" />
