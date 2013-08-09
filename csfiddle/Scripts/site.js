@@ -12,11 +12,14 @@ $(document).ready(function () {
         west__togglerLength_open: 105,
         closable: false
     });
-    
-    CodeMirror.fromTextArea(document.getElementById('InputCode'), {
-        lineNumbers: true,
-        matchBrackets: true,
-        mode: "text/x-csharp",
-        indentUnit: 4
-    });
+
+    csfiddle = {
+        editor: CodeMirror.fromTextArea(document.getElementById('InputCode'), {
+            lineNumbers: true,
+            matchBrackets: true,
+            mode: "text/x-csharp",
+            indentUnit: 4,
+            autofocus: true
+        })
+    };
 });

@@ -1,8 +1,4 @@
 ﻿@using System.Web.Optimization
-@using ChameleonForms
-@using ChameleonForms.Component
-@using ChameleonForms.Enums
-@using ChameleonForms.Templates
 @model csfiddle.Controllers.ViewModels.CodeViewModel
 
 <!DOCTYPE html>
@@ -12,31 +8,23 @@
         <title>c#fiddle</title>
         @Styles.Render("~/sitecss")
         @Scripts.Render("~/sitescripts")
+        <script type="text/javascript">
+            function runCode() {
+                $("#run").innerHTML = "Running...";
+                $.post('/', { InputCode: csfiddle.editor.getValue() }, function (data) {
+                    $('#result').html("<pre>" + data + "</pre>");
+                })
+                    .always(function () { $("#run").innerHTML = "Run";});
+            }
+        </script>
     </head>
     <body>
-        <div class="ui-layout-north"><a href="http://csfiddle.net">c#fiddle</a></div>
+        <div class="ui-layout-north"><button onclick="window.location = '';">New</button><button id="run" onclick="runCode()">Run</button><button>Save</button></div>
         <div class="ui-layout-west">
-            @using (var f = Html.BeginChameleonForm(htmlAttributes: new HtmlAttributes(@class => "fullheight")))
-            {
-                using (var s = f.BeginSection("C#", htmlAttributes: new { @class = "fullheight"}))
-                {
-                    @s.FieldFor(m => m.InputCode).Label(string.Empty)
-                }
-                
-                using (var n = f.BeginNavigation())
-                {
-                    @n.Submit("Submit")
-                }
-            }
+            <textarea id="InputCode" name="InputCode">@Model.InputCode</textarea>
         </div>
         <div class="ui-layout-center">
-            @using (var f = Html.BeginChameleonForm(htmlAttributes: new HtmlAttributes(@class => "fullheight")))
-            {
-                using (var s = f.BeginSection("Result", htmlAttributes: new { @class = "fullheight" }))
-                {
-                    <pre>@Model.Result</pre>
-                }
-            }
+            <div id="result"><pre>@Model.Result</pre></div>
         </div>
         <div class="ui-layout-south">A side project by <a href="http://twitter.com/mdaviesnet">@@mdaviesnet</a></div>
     </body>

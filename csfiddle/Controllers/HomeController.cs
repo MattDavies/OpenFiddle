@@ -1,6 +1,11 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Reflection;
+using System.Security.AccessControl;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
@@ -9,31 +14,54 @@ using System.Web.Script.Serialization;
 using System.Xml;
 using csfiddle.Controllers.ViewModels;
 using csfiddle.csfiddle.IdeOne;
+using Microsoft.CSharp;
 
 namespace csfiddle.Controllers
 {
     public class HomeController : Controller
     {
         [HttpPost]
-        public async Task<ActionResult> Index(CodeViewModel vm)
+        public ActionResult Index(CodeViewModel vm)
         {
-            var client = new Ideone_Service_v1Service();
-            
-            var thing = client.createSubmission("Thallar", "randompass3", vm.InputCode, 27, string.Empty, true, false);
-            var result = thing.OfType<XmlElement>().Select(o => (o).ChildNodes).ToDictionary(x => x.Item(0).InnerText, x => x.Item(1).InnerText);
-            while (string.IsNullOrEmpty(vm.Result))
+            return new ContentResult{Content = WebUtility.HtmlEncode(CompileAndRun(vm.InputCode))};
+        }
+
+        static string CompileAndRun(string code)
+        {
+            var compilerParams = new CompilerParameters
             {
-                var req = client.getSubmissionDetails("Thallar", "randompass3", result["link"], true, true, true, true, true);
-                vm.Result = req.OfType<XmlElement>().Select(o => (o).ChildNodes).ToDictionary(x => x.Item(0).InnerText, x => x.Item(1).InnerText)["output"];
-                Thread.Sleep(TimeSpan.FromSeconds(1));
+                GenerateInMemory = true,
+                TreatWarningsAsErrors = false,
+                GenerateExecutable = false,
+                CompilerOptions = "/optimize"
+            };
+
+            string[] references = { "System.dll" };
+            compilerParams.ReferencedAssemblies.AddRange(references);
+
+            var provider = new CSharpCodeProvider();
+            var compile = provider.CompileAssemblyFromSource(compilerParams, code);
+
+            if (compile.Errors.HasErrors)
+            {
+                return compile.Errors.Cast<CompilerError>().Aggregate("Compile error: ", (current, ce) => current + string.Format("Line: {0}\nColumn: {1}\nError Code: {2}\nError Text: {3}\n",
+                    ce.Line, ce.Column, ce.ErrorNumber, ce.ErrorText));
             }
 
-            return View(vm);
+            var module = compile.CompiledAssembly.GetModules()[0];
+            var mainMethod = module.GetTypes().FirstOrDefault(t => t.GetMethods().Any(m => m.Name == "Main"));
+
+            if (mainMethod == null) return "Compile error: Couldn't find a valid Main() method to execute.";
+            
+            var stringWriter = new StringWriter();
+            Console.SetOut(stringWriter);
+            mainMethod.GetMethod("Main").Invoke(null, new object[]{});
+            return stringWriter.ToString();
         }
 
         public ActionResult Index()
         {
-            var code = new List<string>()
+            var code = new List<string>
             {
                 "using System;",
                 "",
