@@ -11,20 +11,14 @@ namespace csfiddle
 {
     public class MvcApplication : HttpApplication
     {
-        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
-        {
-            filters.Add(new HandleErrorAttribute());
-        }
-
         public static void RegisterMvcRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            routes.MapRoute(name: "Home", url: "", defaults: new { controller = "Home", action = "Index" });
+            routes.MapRoute(name: "Run", url: "Run", defaults: new { controller = "Home", action = "Run" });
+            routes.MapRoute(name: "Save", url: "Save", defaults: new { controller = "Home", action = "Save" });
+            routes.MapRoute(name: "Show", url: "{id}", defaults: new { controller = "Home", action = "Show" }, constraints: new { id = @"^\w{8}$" });
         }
 
         public static void RegisterApiRoutes(HttpConfiguration config)
@@ -62,7 +56,6 @@ namespace csfiddle
         protected void Application_Start()
         {
             RegisterApiRoutes(GlobalConfiguration.Configuration);
-            RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterMvcRoutes(RouteTable.Routes);
             RegisterBundles(BundleTable.Bundles);
         }

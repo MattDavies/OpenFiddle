@@ -6,6 +6,8 @@ namespace csfiddle.Controllers.ViewModels
 {
     public class CodeViewModel
     {
+        public string Id { get; set; }
+
         [DataType(DataType.MultilineText)]
         [AllowHtml]
         public string InputCode { get; set; }
