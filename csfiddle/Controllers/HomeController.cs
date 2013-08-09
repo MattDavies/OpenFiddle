@@ -8,10 +8,12 @@ using System.Reflection;
 using System.Security;
 using System.Security.Permissions;
 using System.Security.Policy;
+using System.Threading;
 using System.Web.Mvc;
 using csfiddle.Controllers.ViewModels;
 using csfiddle.Database.Entities;
 using csfiddle.Database.Repositories;
+using csfiddle.Helpers;
 using Microsoft.CSharp;
 
 namespace csfiddle.Controllers
@@ -144,6 +146,8 @@ namespace csfiddle.Controllers
             {
                 try
                 {
+                    //Todo: run in a new thread with a time limit
+
                     new FileIOPermission(FileIOPermissionAccess.Read | FileIOPermissionAccess.PathDiscovery,
                         assemblyPath).Assert();
                     var assembly = Assembly.LoadFile(assemblyPath);
@@ -159,7 +163,8 @@ namespace csfiddle.Controllers
 
                     if (mainMethod == null) return "Compile error: Couldn't find a valid Main() method to execute.";
 
-                    mainMethod.GetMethod("Main").Invoke(null, new object[] {});
+                    new WaitFor<object>(TimeSpan.FromSeconds(10)).Run(
+                        () => mainMethod.GetMethod("Main").Invoke(null, new object[] {}));
                     return "<pre>" + WebUtility.HtmlEncode(stringWriter.ToString()) + "</pre>";
                 }
                 catch (TargetInvocationException ex)
@@ -167,9 +172,13 @@ namespace csfiddle.Controllers
                     if (ex.InnerException is SecurityException)
                     {
                         return "While in BETA, C#Fiddle runs code under very limited security permissions.<br />Your code failed requesting the following permission:<br /><br />"
-                            + ex.InnerException.Message;
+                               + ex.InnerException.Message;
                     }
                     return ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                }
+                catch (TimeoutException)
+                {
+                    return "While in BETA, C#Fiddle requires that your code run to completion in less than 10 seconds.";
                 }
                 catch (Exception ex)
                 {
