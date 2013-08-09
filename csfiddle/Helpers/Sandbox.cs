@@ -38,6 +38,8 @@ namespace csfiddle.Helpers
         {
             try
             {
+                //todo: do this in a new process, not just a new thread
+                
                 new FileIOPermission(FileIOPermissionAccess.Read | FileIOPermissionAccess.PathDiscovery,
                     assemblyPath).Assert();
                 var assembly = Assembly.LoadFile(assemblyPath);
