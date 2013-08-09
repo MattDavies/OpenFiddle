@@ -16,7 +16,7 @@ $(document).ready(function () {
         runCode: function() {
             $("#run").html("Running...");
             $.post('/Run', { InputCode: csfiddle.editor.getValue() }, function(data) {
-                $('#result').html("<pre>" + data + "</pre>");
+                $('#result').html(data);
             })
                 .always(function () { $("#run").html("Run"); })
                 .fail(function () { $("#result").html("<pre>Failed to run.</pre>"); });
