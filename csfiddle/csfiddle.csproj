@@ -168,6 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\codemirror-3.01\codemirror.css" />
+    <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\site.css" />
     <Content Include="Content\jquery.ui.layout.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
