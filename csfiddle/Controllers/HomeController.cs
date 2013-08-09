@@ -8,7 +8,6 @@ using System.Reflection;
 using System.Security;
 using System.Security.Permissions;
 using System.Security.Policy;
-using System.Threading;
 using System.Web.Mvc;
 using csfiddle.Controllers.ViewModels;
 using csfiddle.Database.Entities;
@@ -62,7 +61,7 @@ namespace csfiddle.Controllers
                 CompilerOptions = "/optimize"
             };
 
-            string[] references = { "System.dll" };
+            string[] references = { "System.dll", Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase.Replace("file:///", "")) + "\\System.Web.Mvc.dll" };
             compilerParams.ReferencedAssemblies.AddRange(references);
 
             var provider = new CSharpCodeProvider();
@@ -146,8 +145,6 @@ namespace csfiddle.Controllers
             {
                 try
                 {
-                    //Todo: run in a new thread with a time limit
-
                     new FileIOPermission(FileIOPermissionAccess.Read | FileIOPermissionAccess.PathDiscovery,
                         assemblyPath).Assert();
                     var assembly = Assembly.LoadFile(assemblyPath);
