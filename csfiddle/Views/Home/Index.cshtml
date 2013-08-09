@@ -11,7 +11,7 @@
         <script type="text/javascript">
             function runCode() {
                 $("#run").html("Running...");
-                $.post('/', { InputCode: csfiddle.editor.getValue() }, function (data) {
+                $.post('/Run', { InputCode: csfiddle.editor.getValue() }, function (data) {
                     $('#result').html("<pre>" + data + "</pre>");
                 }).always(function () { $("#run").html("Run"); } );
             }
