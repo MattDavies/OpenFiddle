@@ -120,7 +120,8 @@ namespace csfiddle.Controllers
 
             var vm = new CodeViewModel
             {
-                InputCode = string.Join(Environment.NewLine, code)
+                InputCode = string.Join(Environment.NewLine, code),
+                Result = "Welcome!"
             };
             return View(vm);
         }

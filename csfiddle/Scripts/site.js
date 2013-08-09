@@ -8,6 +8,11 @@ $(document).ready(function () {
             autofocus: true
         }),
 
+        newCode: function() {
+            history.pushState(null, "c#fiddle", "/");
+            window.location = "/";
+        },
+
         runCode: function() {
             $("#run").html("Running...");
             $.post('/Run', { InputCode: csfiddle.editor.getValue() }, function(data) {
@@ -42,7 +47,7 @@ $(document).ready(function () {
         closable: false
     });
 
-    $("#new").click(function () { window.location = ""; });
+    $("#new").click(csfiddle.newCode);
     $("#run").click(csfiddle.runCode);
     $("#save").click(csfiddle.saveCode);
 });
