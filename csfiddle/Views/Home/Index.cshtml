@@ -8,27 +8,9 @@
         <title>c#fiddle</title>
         @Styles.Render("~/sitecss")
         @Scripts.Render("~/sitescripts")
-        <script type="text/javascript">
-            function runCode() {
-                $("#run").html("Running...");
-                $.post('/Run', { InputCode: csfiddle.editor.getValue() }, function (data) {
-                    $('#result').html("<pre>" + data + "</pre>");
-                }).always(function () { $("#run").html("Run"); } );
-            }
-            function save() {
-                $("#save").html("Saving...");
-                $.post('/Save', { Id: $("#id").val(), InputCode: csfiddle.editor.getValue() }, function (id) {
-                    if ($("#id").val() != id) {
-                        history.pushState(null, "Viewing Fiddle " + id, "/" + id);
-                        $("#id").val(id);
-                    }
-                    $('#result').html("Saved!");
-                }).always(function () { $("#save").html("Save"); });
-            }
-        </script>
     </head>
     <body>
-        <div class="ui-layout-north"><button onclick="window.location = '';">New</button><button id="run" onclick="runCode()">Run</button><button id="save" onclick="save()">Save</button></div>
+        <div class="ui-layout-north"><button id="new">New</button><button id="run">Run</button><button id="save">Save</button></div>
         <div class="ui-layout-west">
             <form>
                 <input type="hidden" id="id" name="id" value="@Model.Id" />
