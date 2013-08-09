@@ -24,12 +24,13 @@ $(document).ready(function () {
 
         saveCode: function () {
             $("#save").html("Saving...");
-            $.post('/Save', { Id: $("#id").val(), InputCode: csfiddle.editor.getValue() }, function(id) {
-                if ($("#id").val() != id) {
-                    history.pushState(null, "Viewing Fiddle " + id, "/" + id);
-                    $("#id").val(id);
+            $.post('/Save', { Id: $("#id").val(), InputCode: csfiddle.editor.getValue() }, function(data) {
+                if ($("#id").val() != data.id) {
+                    history.pushState(null, "Viewing Fiddle " + data.id, "/" + data.id);
+                    $("#id").val(data.id);
                 }
-            }).always(function() { $("#save").html("Save"); });
+                $('#result').html(data.result);
+            }).always(function() { $("#save").html("Save and Run"); });
         }
     };
     

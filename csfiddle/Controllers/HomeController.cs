@@ -20,27 +20,28 @@ namespace csfiddle.Controllers
         [HttpPost]
         public ActionResult Save(CodeViewModel vm)
         {
-            string hash = null;
+            string id = null;
 
             if (!string.IsNullOrEmpty(vm.Id))
             {
                 var fiddle = new FiddleRepository().Get(vm.Id);
                 if (fiddle != null)
-                    hash = fiddle.Id;
+                    id = fiddle.Id;
             }
-            if (hash == null)
+            if (id == null)
             {
                 const string hashOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
                 var random = new Random();
-                hash = new string(
+                id = new string(
                     Enumerable.Repeat(hashOptions, 8)
                               .Select(s => s[random.Next(s.Length)])
                               .ToArray());
             }
 
-            new FiddleRepository().Insert(new Fiddle { InputCode = vm.InputCode, Id = hash, Result = CompileHelper.CompileAndRun(vm.InputCode) });
+            var result = CompileHelper.CompileAndRun(vm.InputCode);
+            new FiddleRepository().Insert(new Fiddle { InputCode = vm.InputCode, Id = id, Result = result });
 
-            return new ContentResult { Content = hash };
+            return new JsonResult {Data = new {id, result}};
         }
 
         public ActionResult Show(string id)

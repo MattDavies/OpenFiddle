@@ -11,7 +11,7 @@
         @Scripts.Render("~/sitescripts")
     </head>
     <body>
-        <div class="ui-layout-north"><button id="new">New</button><button id="run">Run</button><button id="save">Save</button></div>
+        <div class="ui-layout-north"><button id="new">New</button><button id="run">Run</button><button id="save">Run and Save</button></div>
         <div class="ui-layout-west">
             <form>
                 <input type="hidden" id="id" name="id" value="@Model.Id" />
@@ -19,7 +19,7 @@
             </form>
         </div>
         <div class="ui-layout-center">
-            <div id="result">@Model.Result</div>
+            <div id="result">@Html.Raw(Model.Result)</div>
         </div>
         <div class="ui-layout-south">A side project by <a href="http://twitter.com/mdaviesnet">@@mdaviesnet</a></div>
     </body>
