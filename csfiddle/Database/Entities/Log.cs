@@ -12,5 +12,6 @@ namespace csfiddle.Database.Entities
         }
 
         public string InputCode { get; set; }
+        public string IpAddress { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace csfiddle.Controllers
         [HttpPost]
         public ActionResult Run(CodeViewModel vm)
         {
-            new LogRepository().Insert(new Log{InputCode = vm.InputCode});
+            new LogRepository().Insert(new Log{InputCode = vm.InputCode, IpAddress = Request.UserHostAddress });
 
             return new ContentResult { Content = CompileHelper.CompileAndRun(vm.InputCode) };
         }
@@ -22,7 +22,7 @@ namespace csfiddle.Controllers
         [HttpPost]
         public ActionResult Save(CodeViewModel vm)
         {
-            new LogRepository().Insert(new Log { InputCode = vm.InputCode });
+            new LogRepository().Insert(new Log { InputCode = vm.InputCode, IpAddress = Request.UserHostAddress });
 
             string id = null;
 
