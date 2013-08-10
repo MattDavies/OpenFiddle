@@ -147,6 +147,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\Entities\Log.cs" />
+    <Compile Include="Database\Repositories\LogRepository.cs" />
     <Compile Include="Helpers\CompileHelper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Helpers\Sandbox.cs" />

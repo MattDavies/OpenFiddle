@@ -14,12 +14,16 @@ namespace csfiddle.Controllers
         [HttpPost]
         public ActionResult Run(CodeViewModel vm)
         {
+            new LogRepository().Insert(new Log{InputCode = vm.InputCode});
+
             return new ContentResult { Content = CompileHelper.CompileAndRun(vm.InputCode) };
         }
 
         [HttpPost]
         public ActionResult Save(CodeViewModel vm)
         {
+            new LogRepository().Insert(new Log { InputCode = vm.InputCode });
+
             string id = null;
 
             if (!string.IsNullOrEmpty(vm.Id))
