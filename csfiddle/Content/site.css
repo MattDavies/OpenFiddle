@@ -53,3 +53,12 @@
 #result {
     padding: 10px;
 }
+
+.rightpadded {
+    float: right;
+    padding-right: 6px;
+}
+
+#help {
+    padding-left: 15px;
+}

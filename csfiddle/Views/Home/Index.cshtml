@@ -1,37 +1,25 @@
-﻿@using System.Web.Optimization
-@model csfiddle.Controllers.ViewModels.CodeViewModel
+﻿@model csfiddle.Controllers.ViewModels.CodeViewModel
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-        <title>c#fiddle</title>
-        <link rel="icon" type="image/vnd.microsoft.icon" href="~/Content/images/favicon.ico" />
-        @Styles.Render("~/sitecss")
-        @Scripts.Render("~/sitescripts")
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-221584-37', 'csharpfiddle.com');
-            ga('send', 'pageview');
-        </script>
-    </head>
-    <body>
-        <div class="ui-layout-north"><button id="new">New</button><button id="run">Run</button><button id="save">Run and Save</button></div>
-        <div class="ui-layout-west">
-            <form>
-                <input type="hidden" id="id" name="id" value="@Model.Id" />
-                <textarea id="InputCode" name="InputCode">@Model.InputCode</textarea>
-            </form>
-        </div>
-        <div class="ui-layout-center">
-            <div id="result">@Html.Raw(Model.Result)</div>
-        </div>
-        <div class="ui-layout-south">A side project by <a href="http://twitter.com/mdaviesnet">@@mdaviesnet</a></div>
-    </body>
-</html>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Editor = true;
+}
+<div class="ui-layout-north">
+    <button id="new">New</button>
+    <button id="run">Run</button>
+    <button id="save">Run and Save</button>
+    <span class="rightpadded">
+        <a href="/Help"> @*For some reason Url.Action() here causes a stack overflow in System.Web.Mvc...*@
+            <img src="~/Content/Images/help.jpg" alt="Help" />
+        </a>
+    </span>
+</div>
+<div class="ui-layout-west">
+    <form>
+        <input type="hidden" id="id" name="id" value="@Model.Id" />
+        <textarea id="InputCode" name="InputCode">@Model.InputCode</textarea>
+    </form>
+</div>
+<div class="ui-layout-center">
+    <div id="result">@Html.Raw(Model.Result)</div>
+</div>

@@ -174,6 +174,7 @@
   <ItemGroup>
     <Content Include="Content\codemirror-3.01\codemirror.css" />
     <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\help.jpg" />
     <Content Include="Content\site.css" />
     <Content Include="Content\jquery.ui.layout.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -305,6 +306,7 @@
     <Content Include="Scripts\codemirror-3.0\mode\xquery.js" />
     <Content Include="Scripts\codemirror-3.0\mode\yaml.js" />
     <Content Include="Scripts\codemirror-3.0\mode\z80.js" />
+    <Content Include="Scripts\editor.js" />
     <Content Include="Scripts\site.js" />
     <Content Include="Scripts\jquery-1.8.3.js" />
     <Content Include="Scripts\jquery-1.8.3.min.js" />
@@ -320,6 +322,8 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Help.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web References\csfiddle.IdeOne\Ideone_Service_v1.wsdl" />
     <None Include="Web References\csfiddle.IdeOne\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>

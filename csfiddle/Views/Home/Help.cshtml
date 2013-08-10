@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="ui-layout-north">
+    <button id="new" onclick="window.location='/';">New</button>
+    <span class="rightpadded">
+        <a href="/Help">
+            @*For some reason Url.Action() here causes a stack overflow in System.Web.Mvc...*@
+            <img src="~/Content/Images/help.jpg" alt="Help" />
+        </a>
+    </span>
+</div>
+<div class="ui-layout-center">
+    <div id="help">
+        <h3>What is C#Fiddle?</h3>
+        <p>A very basic tool that lets you save and send executable snippets of code to others.</p>
+
+        <h3>How does it work?</h3>
+        <p>When you run code, we create a new sandboxed process on the server with a timeout of 10 seconds.</p>
+        <p>At the moment, your code must run with very limited permissions while we evaluate how best to securely expand what you can do.</p>
+
+        <h3>What version of .NET does it use?</h3>
+        <p>The code currently compiles and runs using the .NET 4.5 Framework. We'll be expanding this to future options in the future.</p>
+
+        <h3>Where can I ask questions / send you some early feedback?</h3>
+        <p>Send me a tweet <a href="http://twitter.com/mdaviesnet" target="_blank">@@mdaviesnet</a>!</p>
+
+        <h3>Will you be releasing the source code?</h3>
+        <p>Yes. Once I've received some further feedback on the app, I'll eventually be opening this up as a <a href="http://github.com" target="_blank">GitHub project</a>.</p>
+        
+        <h3>What are your ideas/suggestions so far?</h3>
+        <ul>
+            <li>Gist integration</li>
+            <li>NuGet package support</li>
+            <li>A basic test runner</li>
+            <li>Expanded framework options</li>
+            <li>Expanded security permissions</li>
+        </ul>
+    </div>
+</div>
