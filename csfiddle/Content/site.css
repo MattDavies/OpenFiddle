@@ -62,3 +62,7 @@
 #help {
     padding-left: 15px;
 }
+
+a, a:visited, a:hover, a:active {
+    color: #0000ff;
+}
