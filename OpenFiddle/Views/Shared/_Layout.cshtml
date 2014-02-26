@@ -5,13 +5,10 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>OpenFiddle</title>
     <link rel="icon" type="image/vnd.microsoft.icon" href="~/Content/images/favicon.ico" />
+    <meta name="Description" content="Coding tool that allows you to save and send executable snippets of code to others.">
     @Styles.Render("~/sitecss")
     @Scripts.Render("~/sitescripts")
-    @if (ViewBag.Editor == true)
-    {
-        @Scripts.Render("~/editor")
-        <meta name="Description" content="Coding tool that allows you to save and send executable snippets of code to others.">
-    }
+    @Scripts.Render("~/editor")
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {

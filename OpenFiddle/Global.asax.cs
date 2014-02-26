@@ -14,7 +14,6 @@ namespace OpenFiddle
 
             routes.MapRoute(name: "Home", url: "", defaults: new { controller = "Home", action = "Index" });
             routes.MapRoute(name: "Run", url: "Run", defaults: new { controller = "Home", action = "Run" });
-            routes.MapRoute(name: "Help", url: "Help", defaults: new { controller = "Home", action = "Help" });
             routes.MapRoute(name: "Save", url: "Save", defaults: new { controller = "Home", action = "Save" });
             routes.MapRoute(name: "Show", url: "{id}", defaults: new { controller = "Home", action = "Show" }, constraints: new { id = @"^\w{8}$" });
         }

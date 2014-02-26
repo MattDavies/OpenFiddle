@@ -86,10 +86,5 @@ namespace OpenFiddle.Controllers
             };
             return View(vm);
         }
-
-        public ActionResult Help()
-        {
-            return View();
-        }
     }
 }

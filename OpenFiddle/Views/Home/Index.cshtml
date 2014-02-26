@@ -2,14 +2,13 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Editor = true;
 }
 <div class="ui-layout-north">
     <button id="new">New</button>
     <button id="run">Run</button>
     <button id="save">Run and Save</button>
     <span class="rightpadded">
-        <a href="/Help"> @*For some reason Url.Action() here causes a stack overflow in System.Web.Mvc...*@
+        <a href="https://github.com/MattDavies/OpenFiddle/blob/master/README.md" target="_blank">
             <img src="~/Content/Images/help.jpg" alt="Help" />
         </a>
     </span>
