@@ -63,14 +63,14 @@ namespace OpenFiddle.Helpers
             {
                 if (ex.InnerException is SecurityException)
                 {
-                    return "While in BETA, C#Fiddle runs code under very limited security permissions.<br />Your code failed requesting the following permission:<br /><br />"
+                    return "While in BETA, OpenFiddle runs code under very limited security permissions.<br />Your code failed requesting the following permission:<br /><br />"
                            + ex.InnerException.Message;
                 }
                 return ex.InnerException != null ? ex.InnerException.Message : ex.Message;
             }
             catch (TimeoutException)
             {
-                return "While in BETA, C#Fiddle requires that your code run to completion in less than 10 seconds.";
+                return "While in BETA, OpenFiddle requires that your code run to completion in less than 10 seconds.";
             }
             catch (Exception ex)
             {

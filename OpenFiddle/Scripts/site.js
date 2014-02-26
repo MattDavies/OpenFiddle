@@ -2,7 +2,7 @@ $(document).ready(function () {
     csfiddle = {
 
         newCode: function () {
-            history.pushState(null, "c#fiddle", "/");
+            history.pushState(null, "openfiddle", "/");
             window.location = "/";
         },
 
