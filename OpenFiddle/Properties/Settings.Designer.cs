@@ -22,15 +22,5 @@ namespace OpenFiddle.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://ideone.com/api/1/service")]
-        public string csfiddle_csfiddle_IdeOne_Ideone_Service_v1Service {
-            get {
-                return ((string)(this["csfiddle_csfiddle_IdeOne_Ideone_Service_v1Service"]));
-            }
-        }
     }
 }

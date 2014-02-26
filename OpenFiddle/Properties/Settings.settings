@@ -1,9 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="csfiddle.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
   <Profiles />
-  <Settings>
-    <Setting Name="csfiddle_csfiddle_IdeOne_Ideone_Service_v1Service" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://ideone.com/api/1/service</Value>
-    </Setting>
-  </Settings>
+  <Settings />
 </SettingsFile>
