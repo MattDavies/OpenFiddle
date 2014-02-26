@@ -1,10 +1,8 @@
 ﻿using System.CodeDom.Compiler;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using Microsoft.CSharp;
 
-namespace csfiddle.Helpers
+namespace OpenFiddle.Helpers
 {
     public class CompileHelper
     {

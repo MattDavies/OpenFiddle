@@ -1,10 +1,9 @@
 ﻿using System;
-using System.IO;
 using System.Security;
 using System.Security.Permissions;
 using System.Threading;
 
-namespace csfiddle.Helpers
+namespace OpenFiddle.Helpers
 {
     /// <summary>
     /// Helper class for invoking tasks with timeout. Overhead is 0,005 ms.

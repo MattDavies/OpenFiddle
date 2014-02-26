@@ -1,10 +1,9 @@
 ﻿using System.Configuration;
-using System.Linq;
-using csfiddle.Database.Entities;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
+using OpenFiddle.Database.Entities;
 
-namespace csfiddle.Database.Repositories
+namespace OpenFiddle.Database.Repositories
 {
     public class LogRepository
     {

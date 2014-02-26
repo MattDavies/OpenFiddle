@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.WindowsAzure.Storage.Table;
 
-namespace csfiddle.Database.Entities
+namespace OpenFiddle.Database.Entities
 {
     public class Log : TableEntity
     {

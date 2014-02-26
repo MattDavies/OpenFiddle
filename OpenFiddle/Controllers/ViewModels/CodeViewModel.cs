@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace csfiddle.Controllers.ViewModels
+namespace OpenFiddle.Controllers.ViewModels
 {
     public class CodeViewModel
     {

@@ -7,7 +7,7 @@ using System.Security;
 using System.Security.Permissions;
 using System.Security.Policy;
 
-namespace csfiddle.Helpers
+namespace OpenFiddle.Helpers
 {
     public class Sandbox : MarshalByRefObject
     {

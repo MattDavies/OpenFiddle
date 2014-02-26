@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using csfiddle.Controllers.ViewModels;
-using csfiddle.Database.Entities;
-using csfiddle.Database.Repositories;
-using csfiddle.Helpers;
+using OpenFiddle.Controllers.ViewModels;
+using OpenFiddle.Database.Entities;
+using OpenFiddle.Database.Repositories;
+using OpenFiddle.Helpers;
 
-namespace csfiddle.Controllers
+namespace OpenFiddle.Controllers
 {
     public class HomeController : Controller
     {
