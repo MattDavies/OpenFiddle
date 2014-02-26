@@ -314,9 +314,6 @@
     <Content Include="Scripts\jquery.layout.js" />
     <Content Include="Scripts\jquery.layout.min.js" />
     <Content Include="Web.config" />
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
