@@ -237,7 +237,9 @@
     <Content Include="newrelic\NewRelic.Profiler.dll" />
     <Content Include="OpenFiddle.pfx" />
     <Content Include="OpenFiddle.snk" />
-    <Content Include="newrelic\newrelic.config" />
+    <Content Include="newrelic\newrelic.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="newrelic\extensions\extension.xsd">
       <SubType>Designer</SubType>
     </Content>
