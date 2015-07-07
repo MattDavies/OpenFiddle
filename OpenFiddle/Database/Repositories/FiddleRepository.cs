@@ -18,7 +18,11 @@ namespace OpenFiddle.Database.Repositories
 
         public FiddleRepository()
         {
-            var storageAccount = CloudStorageAccount.Parse(ConfigurationManager.ConnectionStrings["TableStorage"].ConnectionString);
+            var connectionString = ConfigurationManager.ConnectionStrings["TableStorage"].ConnectionString;
+            var storageAccount = connectionString == "useDevelopmentStorage=true"
+                ? CloudStorageAccount.DevelopmentStorageAccount
+                : CloudStorageAccount.Parse(connectionString);
+
             var tableClient = storageAccount.CreateCloudTableClient();
             _table = tableClient.GetTableReference(typeof(Fiddle).Name);
             _table.CreateIfNotExists();
