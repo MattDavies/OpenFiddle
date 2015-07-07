@@ -6,7 +6,13 @@ using OpenFiddle.Database.Entities;
 
 namespace OpenFiddle.Database.Repositories
 {
-    public class FiddleRepository
+    public interface IFiddleRepository
+    {
+        Fiddle Get(string id);
+        void Insert(Fiddle fiddle);
+    }
+
+    public class FiddleRepository : IFiddleRepository
     {
         private CloudTable _table;
 
