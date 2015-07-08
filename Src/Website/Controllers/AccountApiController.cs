@@ -12,7 +12,7 @@ using System.Web.Http;
 
 namespace OpenFiddle.Controllers
 {
-    public class WS_AccountController : ApiController
+    public class AccountApiController : ApiController
     {
         private DBContext db = new DBContext();
         //HttpContext httpContext = new HttpContext(new Http

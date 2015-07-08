@@ -23,9 +23,8 @@ namespace OpenFiddle.Controllers
         {
             return PartialView();
         }
-
-        [Authorize]
-        public ActionResult TodoManager()
+        
+        public ActionResult Console()
         {
             return PartialView();
         }

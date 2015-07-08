@@ -4,7 +4,7 @@
     'home',
     'signIn',
     'register',
-    'todoManager'
+    'console'
 ]);
 
 
@@ -51,9 +51,9 @@ app.config(['$provide', '$routeProvider', '$httpProvider', function ($provide, $
         templateUrl: 'App/SignIn',
         controller: 'signInCtrl'
     });
-    $routeProvider.when('/todomanager', {
-        templateUrl: 'App/TodoManager',
-        controller: 'todoManagerCtrl'
+    $routeProvider.when('/console', {
+        templateUrl: 'App/Console',
+        controller: 'consoleCtrl'
     });
     
     $routeProvider.otherwise({
@@ -109,7 +109,7 @@ app.run(['$rootScope', '$http', '$cookies', '$cookieStore', function ($rootScope
                 $cookieStore.put('_Token', data.access_token);
                 $cookieStore.put('_RefreshToken', data.refresh_token);
 
-                $http.get('/api/WS_Account/GetCurrentUserName')
+                $http.get('/api/AccountApi/GetCurrentUserName')
                     .success(function (data, status, headers, config) {
                         if (data != "null") {
                             $rootScope.username = data.replace(/["']{1}/gi, "");//Remove any quotes from the username before pushing it out.
