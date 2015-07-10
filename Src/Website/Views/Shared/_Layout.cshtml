@@ -1,10 +1,10 @@
 ﻿<!DOCTYPE html>
 <html ng-app="app">
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Assets/Bootstrap/css/bootstrap.css")
+    <title>@ViewBag.Title</title>    
     @Styles.Render("~/styles")
 </head>
 <body>
@@ -14,6 +14,22 @@
     @Scripts.Render("~/app")
     @Scripts.Render("~/jquery")
     @Scripts.Render("~/bootstrap")
-    @Scripts.Render("~/misc")
+    @Scripts.Render("~/misc") 
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/ace.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/ext-searchbox.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/ext-spellcheck.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/ext-static_highlight.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/ext-textarea.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/keybinding-emacs.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/keybinding-vim.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-abap.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-asciidoc.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-c9search.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-c_cpp.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-clojure.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-coffee.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-coldfusion.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-csharp.js"></script>
+    @Scripts.Render("~/ace")
 </body>
 </html>

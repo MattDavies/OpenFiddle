@@ -57,7 +57,7 @@ namespace OpenFiddle.Helpers
 
                 new WaitFor<object>(TimeSpan.FromSeconds(10)).Run(
                     () => mainMethod.GetMethod("Main").Invoke(null, new object[] {}));
-                return "<pre>" + WebUtility.HtmlEncode(stringWriter.ToString()) + "</pre>";
+                return stringWriter.ToString();
             }
             catch (TargetInvocationException ex)
             {

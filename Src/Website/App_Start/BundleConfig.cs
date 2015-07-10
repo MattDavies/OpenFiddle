@@ -10,27 +10,27 @@ namespace OpenFiddle
         {
 
             bundles.Add(new ScriptBundle("~/bootstrap").Include(
-                     "~/Assets/Bootstrap/js/bootstrap.js"));
+                     "~/Scripts/bootstrap.js"));
 
             //Moved bootstrap css to own style tag in the _layout page.  This is to remove it from the optimizations which was breaking the fonts and icons.
-            bundles.Add(new StyleBundle("~/styles").IncludeDirectory("~/Assets", "*.css", true));
+            bundles.Add(new StyleBundle("~/styles").IncludeDirectory("~/Content", "*.css", true));
 
 
             bundles.Add(new ScriptBundle("~/ng").Include(
-                        "~/Assets/ng/angular.min.js",
-                        "~/Assets/ng/angular-route.min.js",
-                        "~/Assets/ng/angular-cookies.min.js"));
+                        "~/Scripts/angular.js",
+                        "~/Scripts/angular-route.js",
+                        "~/Scripts/angular-cookies.js"));
 
-            bundles.Add(new ScriptBundle("~/app").IncludeDirectory("~/Assets/app", "*.js", true));
+            bundles.Add(new ScriptBundle("~/app").IncludeDirectory("~/Scripts/app", "*.js", true));
+            bundles.Add(new ScriptBundle("~/ace").IncludeDirectory("~/Scripts/ace", "*.js", true));
 
             bundles.Add(new ScriptBundle("~/jquery").Include(
-                        "~/Assets/jquery/jquery.min.js"));
+                        "~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/misc").IncludeDirectory("~/Assets/misc", "*.js", true));
+            bundles.Add(new ScriptBundle("~/misc").IncludeDirectory("~/Scripts/misc", "*.js", true));
 
-            // Set EnableOptimizations to false for debugging. For more information,
-            // visit http://go.microsoft.com/fwlink/?LinkId=301862
-            BundleTable.EnableOptimizations = true;
+            bundles.Add(new ScriptBundle("~/highlight").IncludeDirectory("~/Scripts/misc", "*.js", true));
+
         }
     }
 }
