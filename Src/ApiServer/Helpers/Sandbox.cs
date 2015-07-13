@@ -38,7 +38,7 @@ namespace OpenFiddle.Helpers
         {
             try
             {
-                //todo: do this in a new process, not just a new thread
+                //TODO: do this in a new process, not just a new thread
                 
                 new FileIOPermission(FileIOPermissionAccess.Read | FileIOPermissionAccess.PathDiscovery,
                     assemblyPath).Assert();

@@ -150,72 +150,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\Api_AccountController.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Controllers\AccountController.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\Api_IntelliSenseController.cs" />
-    <Compile Include="Controllers\Api_MvcController.cs" />
-    <Compile Include="Controllers\Api_ScriptController.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\MainController.cs" />
-    <Compile Include="Controllers\Api_ConsoleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\CompileHelper.cs" />
-    <Compile Include="Helpers\Sandbox.cs" />
-    <Compile Include="Helpers\WaitFor.cs" />
-    <Compile Include="Models\AccountBindingModels.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Language.cs" />
-    <Compile Include="Models\ScriptInput.cs" />
-    <Compile Include="Models\ScriptOutput.cs" />
-    <Compile Include="Models\ConsoleOutput.cs" />
-    <Compile Include="Models\DataModels.cs" />
-    <Compile Include="Models\ConsoleInput.cs" />
-    <Compile Include="Controllers\Utility\ModelErrorChecker.cs" />
-    <Compile Include="Models\IntelliSenseModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Providers\ApplicationOAuthProvider.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Providers\RefreshTokenProvider.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Resources\CodeSamples.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CodeSamples.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\console.css" />
-    <Content Include="Content\mvc.css" />
-    <Content Include="Content\script.css" />
+    <Content Include="content\bootstrap-theme.css" />
+    <Content Include="content\bootstrap-theme.min.css" />
+    <Content Include="content\bootstrap.css" />
+    <Content Include="content\bootstrap.min.css" />
+    <Content Include="content\console.css" />
+    <Content Include="content\mvc.css" />
+    <Content Include="content\script.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\ace\theme-visualstudio.js" />
@@ -225,7 +183,7 @@
     <Content Include="Scripts\misc\modernizr.min.js" />
     <Content Include="Scripts\misc\respond.min.js" />
     <Content Include="Scripts\npm.js" />
-    <Content Include="Content\styles.css" />
+    <Content Include="content\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="OpenFiddle.Com.pfx" />
@@ -276,8 +234,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="content\bootstrap-theme.css.map" />
+    <Content Include="content\bootstrap.css.map" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1046,6 +1004,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_Start\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1054,12 +1013,6 @@
     <Content Include="Views\App\Register.cshtml" />
     <Content Include="Views\App\SignIn.cshtml" />
     <Content Include="Views\App\Console.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\CodeSamples.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>CodeSamples.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
