@@ -37,19 +37,19 @@ app.config(['$provide', '$routeProvider', '$httpProvider', function ($provide, $
     // Routes
     //================================================
     $routeProvider.when('/register', {
-        templateUrl: 'App/Register',
+        templateUrl: 'app/views/register.htm',
         controller: 'registerCtrl'
     });
     $routeProvider.when('/signin/:message?', {
-        templateUrl: 'App/SignIn',
+        templateUrl: 'app/views/signIn.htm',
         controller: 'signInCtrl'
     });
     $routeProvider.when('/console', {
-        templateUrl: 'App/Console',
+        templateUrl: 'app/views/console.htm',
         controller: 'consoleCtrl'
     });
     $routeProvider.when('/script', {
-        templateUrl: 'App/Console',
+        templateUrl: 'app/views/console.htm',
         controller: 'scriptCtrl'
     });
     

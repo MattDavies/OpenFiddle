@@ -14,6 +14,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServer", "src\ApiServer\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServer.Tests", "src\ApiServer.Tests\ApiServer.Tests.csproj", "{8003BC84-8653-4386-9A7A-DAB1637C0486}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "http://localhost:33651", "{2BD6DA4F-BB69-4BE3-BA91-F94F8DA8781F}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.1"
+		ProjectReferences = ""
+		Debug.AspNetCompiler.VirtualPath = "/localhost_33651"
+		Debug.AspNetCompiler.PhysicalPath = "src\Website\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_33651\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_33651"
+		Release.AspNetCompiler.PhysicalPath = "src\Website\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_33651\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "src\Website\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +50,8 @@ Global
 		{8003BC84-8653-4386-9A7A-DAB1637C0486}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8003BC84-8653-4386-9A7A-DAB1637C0486}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8003BC84-8653-4386-9A7A-DAB1637C0486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BD6DA4F-BB69-4BE3-BA91-F94F8DA8781F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD6DA4F-BB69-4BE3-BA91-F94F8DA8781F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
