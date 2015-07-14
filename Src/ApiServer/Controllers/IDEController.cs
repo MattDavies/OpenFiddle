@@ -81,17 +81,5 @@ namespace OpenFiddle.Controllers
             return Guid.NewGuid();
         }
 
-
-        public class CSharpFormat : CSharpSyntaxRewriter
-        {
-           
-        }
-
-        public class VBFormat : VisualBasicSyntaxRewriter
-        {
-
-        }
-
-
     }
 }
