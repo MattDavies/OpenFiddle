@@ -61,7 +61,7 @@
         $scope.getGUID = function () {
           $http.get('/api/IDE/GUID')
                 .success(function (data, status, headers, config) {
-                    id.setValue(data);
+                    $scope.id = data;
                 });            
         }
 
