@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServer", "src\ApiServer\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServer.Tests", "src\ApiServer.Tests\ApiServer.Tests.csproj", "{8003BC84-8653-4386-9A7A-DAB1637C0486}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "http://of", "{2BD6DA4F-BB69-4BE3-BA91-F94F8DA8781F}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://of", "http://of", "{2BD6DA4F-BB69-4BE3-BA91-F94F8DA8781F}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.1"
@@ -34,6 +34,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "http://of", "{2B
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		SlnRelativePath = "src\Website\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{63BCB0E2-DF96-408D-9415-0896728314F2}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global

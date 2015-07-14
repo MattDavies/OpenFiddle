@@ -1,5 +1,5 @@
 ﻿angular.module('console', [])
-    .controller('consoleCtrl',['$scope','$http', function ($scope, $http) {
+    .controller('consoleCtrl', ['$scope', '$http', '$location', '$anchorScroll', function ($scope, $http, $location, $anchorScroll) {
 
         var editor = ace.edit("consoleEditor");
         editor.setTheme("ace/theme/visualstudio");
@@ -29,6 +29,8 @@
                         editor.setValue(data.Code);
                         $scope.output = data.Output;
                         $scope.id = data.Id;
+                        $location.hash('consoleOutput');
+                        $anchorScroll();
                     });
             }
         }
