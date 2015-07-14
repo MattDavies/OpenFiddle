@@ -1,12 +1,18 @@
 ﻿<div class="">
     <div class=" margin-5">
-        <div class="btn btn-primary" ng-click="postRun()">
-            Run
-        </div>
-        <select id="language" ng-init="language = options[0]" ng-model="language" ng-change="postConvert()">
-            <option selected="selected" value="CSharp">C#</option>
-            <option value="VbNet">VB.NET</option>
-        </select>
+        <ul class="list-inline">
+            <li>
+                <div class="btn btn-primary" ng-click="postRun()">
+                    Run
+                </div>
+            </li>
+            <li>
+                <select class="form-control" ng-model="language" ng-init="language='CSharp'" ng-change="postConvert()">
+                    <option value="CSharp">C#</option>
+                    <option value="VbNet">VB.NET</option>
+                </select>
+            </li>
+        </ul>
     </div>
     <div>
         <div id="consoleEditor" ng-model="code" />
@@ -14,6 +20,6 @@
     <div>
         <div class="bar"><span>Output</span></div>
         <textarea id="consoleOutput" ng-model="output" readonly="readonly" ng-init="getCode()"></textarea>
-        <input type="hidden" id="id" ng-model="id" ng-init="getGUID()" />      
+        <input type="hidden" ng-model="id" ng-init="getGUID()" />
     </div>
 </div>

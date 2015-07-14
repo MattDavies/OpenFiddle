@@ -3,11 +3,10 @@
 
         var editor = ace.edit("consoleEditor");
         editor.setTheme("ace/theme/visualstudio");
-        editor.getSession().setMode("ace/mode/csharp");        
+        editor.getSession().setMode("ace/mode/csharp");
 
         $scope.getCode = function ()
         {
-
             var lang = $scope.language;
             $http.get('/api/Console/Code',{params:{ language: lang }})
                 .success(function (data, status, headers, config) {
@@ -45,16 +44,15 @@
                 $http.post('/api/IDE/Convert', input)
                     .success(function (data, status, headers, config) {
                         editor.setValue(data);
-                        switch($scope.language)
-                        {
-                            case "CSharp":
-                                editor.getSession().setMode("ace/mode/csharp");
-                                break;
-                            case "VbNet":
-                                editor.getSession().setMode("ace/mode/vbscript");
-                                break;
-                        }
-                    });
+                        $scope.setSyntax();
+                        $scope.output = null;
+                    })
+                .error(function (data, status, headers, config) {
+                    //we coudln't convert so for the time being we'll get the sample code.
+                    //TODO: ask the user if they want to use the sample code.
+                    $scope.getCode();
+                    $scope.setSyntax();
+                });
             }
         }
 
@@ -63,6 +61,17 @@
                 .success(function (data, status, headers, config) {
                     id.setValue(data);
                 });            
+        }
+
+        $scope.setSyntax = function () {
+            switch ($scope.language) {
+                case "CSharp":
+                    editor.getSession().setMode("ace/mode/csharp");
+                    break;
+                case "VbNet":
+                    editor.getSession().setMode("ace/mode/vbscript");
+                    break;
+            }
         }
      
     }]);
