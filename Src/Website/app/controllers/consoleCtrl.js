@@ -3,11 +3,13 @@
 
         var editor = ace.edit("consoleEditor");
         editor.setTheme("ace/theme/visualstudio");
-        editor.getSession().setMode("ace/mode/csharp");
+        editor.getSession().setMode("ace/mode/csharp");        
 
         $scope.getCode = function ()
         {
-            $http.get('/api/Console/Code')
+
+            var lang = $scope.language;
+            $http.get('/api/Console/Code',{params:{ language: lang }})
                 .success(function (data, status, headers, config) {
                     editor.setValue(data);
                 });
@@ -18,7 +20,8 @@
             var input =
                 {
                     Id: $scope.id,
-                    Code:editor.getValue()  
+                    Code: editor.getValue(),
+                    Language: $scope.language
                 };
 
             if ($scope.code != '') {
@@ -31,23 +34,35 @@
             }
         }
 
-        //$scope.complete = function(index)
-        //{
-        //    $http.post('/api/WS_Todo/CompleteTodoItem/' + $scope.todoList[index].id)
-        //        .success(function (data, status, headers, config) {
-        //            $scope.getList();
-        //        });
-        //}
+        $scope.postConvert = function () {
+            var input =
+                {
+                    Code: editor.getValue(),
+                    Language: $scope.language
+                };
 
-        //$scope.delete = function(index)
-        //{
-        //    $http.post('/api/WS_Todo/DeleteTodoItem/' + $scope.todoList[index].id)
-        //        .success(function (data, status, headers, config) {
-        //            $scope.getList();
-        //        });
-        //}
+            if ($scope.code != '') {
+                $http.post('/api/IDE/Convert', input)
+                    .success(function (data, status, headers, config) {
+                        editor.setValue(data);
+                        switch($scope.language)
+                        {
+                            case "CSharp":
+                                editor.getSession().setMode("ace/mode/csharp");
+                                break;
+                            case "VbNet":
+                                editor.getSession().setMode("ace/mode/vbscript");
+                                break;
+                        }
+                    });
+            }
+        }
 
-        //Get the example code when the page loads.
-        $scope.getCode();
+        $scope.getGUID = function () {
+          $http.get('/api/IDE/GUID')
+                .success(function (data, status, headers, config) {
+                    id.setValue(data);
+                });            
+        }
      
     }]);

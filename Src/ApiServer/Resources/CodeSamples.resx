@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HelloWorldConsole" xml:space="preserve">
+  <data name="HelloWorldConsoleCSharp" xml:space="preserve">
     <value>using System;
 					
 public class Program
@@ -128,10 +128,22 @@ public class Program
 	}
 }</value>
   </data>
-  <data name="HelloWorldScript" xml:space="preserve">
+  <data name="HelloWorldConsoleVBNet" xml:space="preserve">
+    <value>Imports System
+
+Public Module Program
+   Sub Main()
+     Console.WriteLine ("Hello World")
+   End Sub
+End Module</value>
+  </data>
+  <data name="HelloWorldScriptCSharp" xml:space="preserve">
     <value>Console.WriteLine("Hello World");</value>
   </data>
-  <data name="ScriptWrapper" xml:space="preserve">
+  <data name="HelloWorldScriptVBNet" xml:space="preserve">
+    <value>Console.WriteLine("Hello World")</value>
+  </data>
+  <data name="ScriptWrapperCSharp" xml:space="preserve">
     <value>using System;
 					
 public class Program
@@ -141,5 +153,14 @@ public class Program
 		{0}
 	}}
 }}</value>
+  </data>
+  <data name="ScriptWrapperVBNet" xml:space="preserve">
+    <value>Imports System
+
+Public Class Program
+	Public Shared Sub Main()
+		{0}
+	End Sub
+End Class</value>
   </data>
 </root>

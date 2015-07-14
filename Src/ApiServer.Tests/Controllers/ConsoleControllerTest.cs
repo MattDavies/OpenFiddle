@@ -6,7 +6,7 @@ using System.Text;
 using System.Web.Http;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenFiddle.Controllers;
-using OpenFiddle.Models.Console;
+using OpenFiddle.Models;
 
 namespace OpenFiddle.Tests.Controllers
 {
@@ -19,7 +19,7 @@ namespace OpenFiddle.Tests.Controllers
             // Arrange
             ConsoleController controller = new ConsoleController();
 
-            string helloWorldCode = OpenFiddle.Resources.CodeSamples.HelloWorldConsole;
+            string helloWorldCode = OpenFiddle.Resources.CodeSamples.HelloWorldConsoleCSharp;
 
             ConsoleInput input= new ConsoleInput
             {

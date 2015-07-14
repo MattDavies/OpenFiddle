@@ -12,31 +12,40 @@ using System.Threading.Tasks;
 using OpenFiddle.Helpers;
 using OpenFiddle.Resources;
 using OpenFiddle.Models.Script;
+using OpenFiddle.Models.Shared;
 
 namespace OpenFiddle.Controllers
 {
     public class ScriptController : ApiController
     {
-   
+
         [HttpPost]
         public ScriptOutput Run(ScriptInput input)
         {
             var co = new ScriptOutput();
             co.Code = input.Code;
-            co.Output = CompileHelper.CompileAndRun(string.Format(CodeSamples.ScriptWrapper,input.Code));
+            co.Output = CompileHelper.CompileAndRun(string.Format(input.Language == Language.CSharp?CodeSamples.ScriptWrapperCSharp:CodeSamples.ScriptWrapperVBNet , input.Code), input.Language);
             return co;
         }
 
         [HttpGet]
-        public string Code(Guid? id = null)
+        public string Code(Language language = Language.CSharp, Guid? id = null)
         {
-            if (id.HasValue)
+             if (id.HasValue)
             {
                 throw new NotImplementedException();
             }
             else
             {
-                return CodeSamples.HelloWorldScript;
+                switch(language)
+                {
+                    case Language.CSharp:
+                        return CodeSamples.HelloWorldScriptCSharp;
+                    case Language.VbNet:
+                        return CodeSamples.HelloWorldScriptVBNet;
+                    default:
+                       return CodeSamples.HelloWorldScriptCSharp;
+                }               
             }
         }
 

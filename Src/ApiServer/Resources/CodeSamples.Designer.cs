@@ -71,18 +71,42 @@ namespace OpenFiddle.Resources {
         ///	}
         ///}.
         /// </summary>
-        public static string HelloWorldConsole {
+        public static string HelloWorldConsoleCSharp {
             get {
-                return ResourceManager.GetString("HelloWorldConsole", resourceCulture);
+                return ResourceManager.GetString("HelloWorldConsoleCSharp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Imports System
+        ///
+        ///Public Module Program
+        ///   Sub Main()
+        ///     Console.WriteLine (&quot;Hello World&quot;)
+        ///   End Sub
+        ///End Module.
+        /// </summary>
+        public static string HelloWorldConsoleVBNet {
+            get {
+                return ResourceManager.GetString("HelloWorldConsoleVBNet", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Console.WriteLine(&quot;Hello World&quot;);.
         /// </summary>
-        public static string HelloWorldScript {
+        public static string HelloWorldScriptCSharp {
             get {
-                return ResourceManager.GetString("HelloWorldScript", resourceCulture);
+                return ResourceManager.GetString("HelloWorldScriptCSharp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Console.WriteLine(&quot;Hello World&quot;).
+        /// </summary>
+        public static string HelloWorldScriptVBNet {
+            get {
+                return ResourceManager.GetString("HelloWorldScriptVBNet", resourceCulture);
             }
         }
         
@@ -97,9 +121,24 @@ namespace OpenFiddle.Resources {
         ///	}}
         ///}}.
         /// </summary>
-        public static string ScriptWrapper {
+        public static string ScriptWrapperCSharp {
             get {
-                return ResourceManager.GetString("ScriptWrapper", resourceCulture);
+                return ResourceManager.GetString("ScriptWrapperCSharp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Imports System
+        ///
+        ///Public Class Program
+        ///	Public Shared Sub Main()
+        ///		{0}
+        ///	End Sub
+        ///End Class.
+        /// </summary>
+        public static string ScriptWrapperVBNet {
+            get {
+                return ResourceManager.GetString("ScriptWrapperVBNet", resourceCulture);
             }
         }
     }

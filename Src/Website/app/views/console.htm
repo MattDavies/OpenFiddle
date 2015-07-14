@@ -3,13 +3,17 @@
         <div class="btn btn-primary" ng-click="postRun()">
             Run
         </div>
+        <select id="language" ng-init="language = options[0]" ng-model="language" ng-change="postConvert()">
+            <option selected="selected" value="CSharp">C#</option>
+            <option value="VbNet">VB.NET</option>
+        </select>
     </div>
     <div>
         <div id="consoleEditor" ng-model="code" />
     </div>
     <div>
         <div class="bar"><span>Output</span></div>
-        <textarea id="consoleOutput" ng-model="output" readonly="readonly"></textarea>
-        <input type="hidden" ng-mode="id" value="@Guid.NewGuid()" />
+        <textarea id="consoleOutput" ng-model="output" readonly="readonly" ng-init="getCode()"></textarea>
+        <input type="hidden" id="id" ng-model="id" ng-init="getGUID()" />      
     </div>
 </div>

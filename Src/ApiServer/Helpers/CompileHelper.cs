@@ -1,12 +1,14 @@
 ﻿using System.CodeDom.Compiler;
 using System.Linq;
 using Microsoft.CSharp;
+using OpenFiddle.Models.Shared;
+using Microsoft.VisualBasic;
 
 namespace OpenFiddle.Helpers
 {
     public class CompileHelper
     {
-        public static string CompileAndRun(string code)
+        public static string CompileAndRun(string code, Language language)
         {
             var compilerParams = new CompilerParameters
             {
@@ -19,14 +21,14 @@ namespace OpenFiddle.Helpers
             string[] references = { "System.dll", "System.Linq.dll", "System.Core.dll" };
             compilerParams.ReferencedAssemblies.AddRange(references);
 
-            var provider = new CSharpCodeProvider();
+            CodeDomProvider provider = language == Language.CSharp ? (CodeDomProvider)new CSharpCodeProvider() : (CodeDomProvider)new VBCodeProvider();
             var compile = provider.CompileAssemblyFromSource(compilerParams, code);
 
             if (compile.Errors.HasErrors)
             {
                 return compile.Errors.Cast<CompilerError>().Aggregate("Compile error: ",
                     (current, ce) => current
-                        + string.Format("Line: {0}<br />Column: {1}<br />Error Code: {2}<br />Error Text: {3}<br />",
+                        + string.Format("Line: {0}\r\nColumn: {1}\r\nError Code: {2}\r\nError Text: {3}\r\n",
                             ce.Line, ce.Column, ce.ErrorNumber, ce.ErrorText));
             }
 

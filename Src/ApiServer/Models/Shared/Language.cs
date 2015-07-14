@@ -7,7 +7,7 @@ namespace OpenFiddle.Models.Shared
 {
     public enum Language
     {
-        Csharp,
+        CSharp,
         VbNet
     }
 }

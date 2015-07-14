@@ -7,7 +7,8 @@
 
         $scope.getCode = function ()
         {
-            $http.get('/api/Script/Code')
+            var lang = $scope.language;
+            $http.get('/api/Script/Code', { params: { language: lang } })
                 .success(function (data, status, headers, config) {
                     editor.setValue(data);
                 });
@@ -18,7 +19,8 @@
             var input =
                 {
                     Id: $scope.id,
-                    Code:editor.getValue()  
+                    Code: editor.getValue(),
+                    Language: $scope.language
                 };
 
             if ($scope.code != '') {
