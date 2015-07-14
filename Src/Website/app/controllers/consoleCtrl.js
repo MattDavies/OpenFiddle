@@ -58,6 +58,21 @@
             }
         }
 
+        $scope.postFormat = function () {
+            var input =
+                {
+                    Code: editor.getValue(),
+                    Language: $scope.language
+                };
+
+            if ($scope.code != '') {
+                $http.post('/api/IDE/Format', input)
+                    .success(function (data, status, headers, config) {
+                        editor.setValue(data);
+                    });
+            }
+        }
+
         $scope.getGUID = function () {
           $http.get('/api/IDE/GUID')
                 .success(function (data, status, headers, config) {

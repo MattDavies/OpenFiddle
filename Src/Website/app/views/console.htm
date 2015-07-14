@@ -2,16 +2,22 @@
     <div class=" margin-5">
         <ul class="list-inline">
             <li>
-                <div class="btn btn-primary" ng-click="postRun()">
-                    Run
-                </div>
-            </li>
-            <li>
                 <select class="form-control" ng-model="language" ng-init="language='CSharp'" ng-change="postConvert()">
                     <option value="CSharp">C#</option>
                     <option value="VbNet">VB.NET</option>
                 </select>
             </li>
+            <li>
+                <div class="btn btn-primary" ng-click="postRun()">
+                    Run
+                </div>
+            </li>
+            <li>
+                <div class="btn btn-primary" ng-click="postFormat()">
+                    Format
+                </div>
+            </li>
+
         </ul>
     </div>
     <div>
