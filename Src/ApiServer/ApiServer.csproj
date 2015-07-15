@@ -270,6 +270,7 @@
     <Compile Include="Models\Account\User.cs" />
     <Compile Include="Models\Console\ConsoleInput.cs" />
     <Compile Include="Models\Console\ConsoleOutput.cs" />
+    <Compile Include="Models\Ide\AutoCompleteInput.cs" />
     <Compile Include="Models\Ide\AutoCompleteSuggestions.cs" />
     <Compile Include="Models\Ide\CodeInput.cs" />
     <Compile Include="Models\Ide\SyntaxErrors.cs" />

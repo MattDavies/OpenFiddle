@@ -24,7 +24,8 @@ namespace OpenFiddle.Tests.Controllers
             ConsoleInput input= new ConsoleInput
             {
                 Id = Guid.NewGuid(),
-                Code = helloWorldCode
+                Code = helloWorldCode,
+                Language = Models.Shared.Language.CSharp
             };
 
             // Act
