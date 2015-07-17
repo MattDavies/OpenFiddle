@@ -1,9 +1,6 @@
 ﻿angular.module('console', [])
-    .controller('consoleCtrl', ['$scope', '$http', '$location', '$anchorScroll', function ($scope, $http, $location, $anchorScroll) {
+    .controller('consoleCtrl', ['$scope', '$http', '$location', '$anchorScroll', '$routeParams', function ($scope, $http, $location, $anchorScroll, $routeParams) {
 
-        var editor = ace.edit("consoleEditor");
-        editor.setTheme("ace/theme/visualstudio");
-        editor.getSession().setMode("ace/mode/csharp");
 
         $scope.getCode = function ()
         {
@@ -12,6 +9,16 @@
                 .success(function (data, status, headers, config) {
                     editor.setValue(data);
                 });
+        }
+
+        $scope.createNew = function () {
+
+            if ($scope.code != '' && !window.confirm("Are you sure?"))
+                    return;
+            $scope.getCode();
+            //new code, new id
+            $scope.getHash();
+            
         }
 
         $scope.postRun = function()
@@ -51,9 +58,13 @@
                     })
                 .error(function (data, status, headers, config) {
                     //we coudln't convert so for the time being we'll get the sample code.
-                    //TODO: ask the user if they want to use the sample code.
-                    $scope.getCode();
-                    $scope.setSyntax();
+                    if (window.confirm("We couldn't convert! Do you want to change the language?")) {
+                        $scope.getCode();
+                        $scope.setSyntax();
+                    } else {
+                        //revert (there must be a better way but hey it's Friday).
+                        $scope.language = $scope.language == "CSharp" ? "VbNet" : "CSharp";
+                    }
                 });
             }
         }
@@ -73,10 +84,30 @@
             }
         }
 
-        $scope.getGUID = function () {
-          $http.get('/api/IDE/GUID')
+        $scope.postSave = function () {
+            var input =
+                {
+                    Id: $sc.id,
+                    Code: editor.getValue(),
+                    Language: $scope.language
+                };
+
+            if ($scope.code != '') {
+                $http.post('/api/IDE/Save', input)
+                    .success(function (data, status, headers, config) {
+                        
+                    });
+            }
+        }
+
+        $scope.getHash = function () {
+          $http.get('/api/IDE/Hash')
                 .success(function (data, status, headers, config) {
                     $scope.id = data;
+                    //change the id in the URL
+                    var search_obj = {};
+                    search_obj['id'] = $scope.id;
+                    $location.search(search_obj);
                 });            
         }
 
@@ -90,5 +121,15 @@
                     break;
             }
         }
+
+
+        $scope.id = $routeParams.id;
+        if ($scope.id == null) {
+            $scope.getHash();
+        }
+
+        var editor = ace.edit("consoleEditor");
+        editor.setTheme("ace/theme/visualstudio");
+        editor.getSession().setMode("ace/mode/csharp");
      
     }]);

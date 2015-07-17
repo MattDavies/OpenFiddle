@@ -44,7 +44,7 @@ app.config(['$provide', '$routeProvider', '$httpProvider', function ($provide, $
         templateUrl: 'app/views/signIn.htm',
         controller: 'signInCtrl'
     });
-    $routeProvider.when('/console', {
+    $routeProvider.when('/console/:id?', {
         templateUrl: 'app/views/console.htm',
         controller: 'consoleCtrl'
     });

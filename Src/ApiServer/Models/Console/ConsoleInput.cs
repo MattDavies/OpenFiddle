@@ -9,7 +9,8 @@ namespace OpenFiddle.Models
 {
     public class ConsoleInput
     {
-        public Guid Id { get; set; }
+        [Required(ErrorMessage = "Id is Required.")]
+        public string Id { get; set; }
         [Required(ErrorMessage = "Code is Required.")]
         public string Code { get; set; }
         public Language Language { get; set; }

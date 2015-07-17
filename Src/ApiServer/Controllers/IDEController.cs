@@ -135,5 +135,16 @@ namespace OpenFiddle.Controllers
             return Guid.NewGuid();
         }
 
+        [HttpGet]
+        public string Hash()
+        {
+            const string hashOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var random = new Random();
+            return new string(
+                Enumerable.Repeat(hashOptions, 8)
+                          .Select(s => s[random.Next(s.Length)])
+                          .ToArray());
+        }
+
     }
 }

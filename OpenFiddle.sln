@@ -11,25 +11,37 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServer", "Src\ApiServer\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServer.Tests", "Src\ApiServer.Tests\ApiServer.Tests.csproj", "{8003BC84-8653-4386-9A7A-DAB1637C0486}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website(1)", "http://localhost:50713", "{27508774-5754-4C23-AAAD-506159C2A1CB}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://of", "http://of", "{2BD6DA4F-BB69-4BE3-BA91-F94F8DA8781F}"
 	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
+		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.1"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_50713"
-		Debug.AspNetCompiler.PhysicalPath = "Src\Website\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50713\"
+		Debug.AspNetCompiler.VirtualPath = "/of"
+		Debug.AspNetCompiler.PhysicalPath = "src\Website\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\of\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_50713"
-		Release.AspNetCompiler.PhysicalPath = "Src\Website\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50713\"
+		Release.AspNetCompiler.VirtualPath = "/of"
+		Release.AspNetCompiler.PhysicalPath = "src\Website\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\of\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "Src\Website\"
+		SlnRelativePath = "src\Website\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3F9B008E-C987-4117-B3E2-6B13411A1D8E}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B137CD98-1D17-414F-97D4-C10DF5EEA9F5}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
 Global
@@ -54,10 +66,10 @@ Global
 		{8003BC84-8653-4386-9A7A-DAB1637C0486}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8003BC84-8653-4386-9A7A-DAB1637C0486}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8003BC84-8653-4386-9A7A-DAB1637C0486}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27508774-5754-4C23-AAAD-506159C2A1CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27508774-5754-4C23-AAAD-506159C2A1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27508774-5754-4C23-AAAD-506159C2A1CB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{27508774-5754-4C23-AAAD-506159C2A1CB}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{2BD6DA4F-BB69-4BE3-BA91-F94F8DA8781F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD6DA4F-BB69-4BE3-BA91-F94F8DA8781F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BD6DA4F-BB69-4BE3-BA91-F94F8DA8781F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD6DA4F-BB69-4BE3-BA91-F94F8DA8781F}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

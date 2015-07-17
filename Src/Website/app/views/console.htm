@@ -8,12 +8,22 @@
                 </select>
             </li>
             <li>
+                <div class="btn" ng-click="createNew()">
+                    New
+                </div>
+            </li>
+            <li>
                 <div class="btn btn-primary" ng-click="postRun()">
                     Run
                 </div>
             </li>
             <li>
-                <div class="btn btn-primary" ng-click="postFormat()">
+                <div class="btn" ng-click="postSave()">
+                    Save
+                </div>
+            </li>
+            <li>
+                <div class="btn" ng-click="postFormat()">
                     Format
                 </div>
             </li>
@@ -26,6 +36,6 @@
     <div>
         <div class="bar"><span>Output</span></div>
         <textarea id="consoleOutput" ng-model="output" readonly="readonly" ng-init="getCode()"></textarea>
-        <input type="hidden" ng-model="id" ng-init="getGUID()" />
+        <input type="hidden" ng-model="id" />
     </div>
 </div>

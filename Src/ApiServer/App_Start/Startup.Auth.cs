@@ -75,5 +75,19 @@ namespace OpenFiddle
             //app.UseFacebookAuthentication(facebookAuthOptions);
 
         }
+
+        //public void RegisterDependencies(IAppBuilder app)
+        //{
+
+        //    //http://kennytordeur.blogspot.co.uk/2012/08/mef-in-aspnet-mvc-4-and-webapi.html
+        //    var builder = new ContainerBuilder();
+        //    builder.RegisterType<LogRepository>().AsImplementedInterfaces().InstancePerRequest();
+        //    builder.RegisterType<FiddleRepository>().AsImplementedInterfaces().InstancePerRequest();
+        //    builder.RegisterControllers(typeof(MvcApplication).Assembly).InstancePerRequest();
+        //    builder.RegisterAssemblyModules(typeof(MvcApplication).Assembly);
+        //    builder.RegisterModule<AutofacWebTypesModule>();
+        //    var container = builder.Build();
+        //    DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+        //}
     }
 }

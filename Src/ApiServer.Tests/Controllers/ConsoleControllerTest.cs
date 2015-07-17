@@ -7,6 +7,7 @@ using System.Web.Http;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenFiddle.Controllers;
 using OpenFiddle.Models;
+using Moq;
 
 namespace OpenFiddle.Tests.Controllers
 {
@@ -17,13 +18,13 @@ namespace OpenFiddle.Tests.Controllers
         public void RunHelloWorld()
         {
             // Arrange
-            ConsoleController controller = new ConsoleController();
+            ConsoleController controller = new ConsoleController((Repos.ILogRepository)new Mock<Repos.ILogRepository>(), (Repos.IFiddleRepository)new Mock<Repos.IFiddleRepository>());
 
             string helloWorldCode = OpenFiddle.Resources.CodeSamples.HelloWorldConsoleCSharp;
 
             ConsoleInput input= new ConsoleInput
             {
-                Id = Guid.NewGuid(),
+                Id = "FakeHash",
                 Code = helloWorldCode,
                 Language = Models.Shared.Language.CSharp
             };

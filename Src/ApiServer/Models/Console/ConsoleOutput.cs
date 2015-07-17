@@ -7,7 +7,7 @@ namespace OpenFiddle.Models
 {
     public class ConsoleOutput
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         public string Code { get; set; }
         public string Output { get; set; }
     }
