@@ -22,7 +22,7 @@ namespace Openfiddle.Tests.Controllers
 
             string helloWorldCode = OpenFiddle.Resources.CodeSamples.HelloWorldConsoleCSharp;
 
-            var modifiedCode = helloWorldCode.Insert(20, "\t\t");
+            var modifiedCode = helloWorldCode.Insert(17, "\t\t");
 
             CodeInput input = new CodeInput
             {
@@ -46,6 +46,7 @@ namespace Openfiddle.Tests.Controllers
         [TestMethod]
         public void ConvertTest()
         {
+
         }
 
         [TestMethod]

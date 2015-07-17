@@ -119,22 +119,22 @@
   </resheader>
   <data name="HelloWorldConsoleCSharp" xml:space="preserve">
     <value>using System;
-					
+
 public class Program
 {
-	public static void Main()
-	{
-		Console.WriteLine("Hello World");
-	}
+    public static void Main()
+    {
+        Console.WriteLine("Hello World");
+    }
 }</value>
   </data>
   <data name="HelloWorldConsoleVBNet" xml:space="preserve">
     <value>Imports System
 
 Public Module Program
-   Sub Main()
-     Console.WriteLine ("Hello World")
-   End Sub
+    Sub Main()
+        Console.WriteLine("Hello World")
+    End Sub
 End Module</value>
   </data>
   <data name="HelloWorldScriptCSharp" xml:space="preserve">
@@ -145,22 +145,22 @@ End Module</value>
   </data>
   <data name="ScriptWrapperCSharp" xml:space="preserve">
     <value>using System;
-					
+
 public class Program
-{{
-	public static void Main()
-	{{
-		{0}
-	}}
-}}</value>
+{
+    public static void Main()
+    {
+        {0}
+    }
+}</value>
   </data>
   <data name="ScriptWrapperVBNet" xml:space="preserve">
     <value>Imports System
 
-Public Class Program
-	Public Shared Sub Main()
-		{0}
-	End Sub
-End Class</value>
+Public Module Program
+    Sub Main()
+        {0}
+    End Sub
+End Module</value>
   </data>
 </root>

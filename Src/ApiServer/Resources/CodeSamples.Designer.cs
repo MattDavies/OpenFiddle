@@ -62,13 +62,13 @@ namespace OpenFiddle.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
-        ///					
+        ///
         ///public class Program
         ///{
-        ///	public static void Main()
-        ///	{
-        ///		Console.WriteLine(&quot;Hello World&quot;);
-        ///	}
+        ///    public static void Main()
+        ///    {
+        ///        Console.WriteLine(&quot;Hello World&quot;);
+        ///    }
         ///}.
         /// </summary>
         public static string HelloWorldConsoleCSharp {
@@ -81,9 +81,9 @@ namespace OpenFiddle.Resources {
         ///   Looks up a localized string similar to Imports System
         ///
         ///Public Module Program
-        ///   Sub Main()
-        ///     Console.WriteLine (&quot;Hello World&quot;)
-        ///   End Sub
+        ///    Sub Main()
+        ///        Console.WriteLine(&quot;Hello World&quot;)
+        ///    End Sub
         ///End Module.
         /// </summary>
         public static string HelloWorldConsoleVBNet {
@@ -112,14 +112,14 @@ namespace OpenFiddle.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
-        ///					
+        ///
         ///public class Program
-        ///{{
-        ///	public static void Main()
-        ///	{{
-        ///		{0}
-        ///	}}
-        ///}}.
+        ///{
+        ///    public static void Main()
+        ///    {
+        ///        {0}
+        ///    }
+        ///}.
         /// </summary>
         public static string ScriptWrapperCSharp {
             get {
@@ -130,11 +130,11 @@ namespace OpenFiddle.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Imports System
         ///
-        ///Public Class Program
-        ///	Public Shared Sub Main()
-        ///		{0}
-        ///	End Sub
-        ///End Class.
+        ///Public Module Program
+        ///    Sub Main()
+        ///        {0}
+        ///    End Sub
+        ///End Module.
         /// </summary>
         public static string ScriptWrapperVBNet {
             get {
