@@ -1,45 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7DFBACD5-603B-48D9-A88C-BE34E948503F}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFiddle", "OpenFiddle\OpenFiddle.csproj", "{A8583DBC-901F-43E8-B062-618A41D65A1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServer", "src\ApiServer\ApiServer.csproj", "{32E79E6C-26A3-4D20-B600-610BB56BA7E2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServer.Tests", "src\ApiServer.Tests\ApiServer.Tests.csproj", "{8003BC84-8653-4386-9A7A-DAB1637C0486}"
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://of", "http://of", "{2BD6DA4F-BB69-4BE3-BA91-F94F8DA8781F}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "false"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.1"
-		ProjectReferences = ""
-		Debug.AspNetCompiler.VirtualPath = "/localhost_33651"
-		Debug.AspNetCompiler.PhysicalPath = "src\Website\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_33651\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_33651"
-		Release.AspNetCompiler.PhysicalPath = "src\Website\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_33651\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "src\Website\"
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{63BCB0E2-DF96-408D-9415-0896728314F2}"
-	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFiddle.Tests", "OpenFiddle.Tests\OpenFiddle.Tests.csproj", "{FC886BAF-1FA4-4D15-933D-1E2760E13DB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,16 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{32E79E6C-26A3-4D20-B600-610BB56BA7E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32E79E6C-26A3-4D20-B600-610BB56BA7E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32E79E6C-26A3-4D20-B600-610BB56BA7E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32E79E6C-26A3-4D20-B600-610BB56BA7E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8003BC84-8653-4386-9A7A-DAB1637C0486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8003BC84-8653-4386-9A7A-DAB1637C0486}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8003BC84-8653-4386-9A7A-DAB1637C0486}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8003BC84-8653-4386-9A7A-DAB1637C0486}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2BD6DA4F-BB69-4BE3-BA91-F94F8DA8781F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2BD6DA4F-BB69-4BE3-BA91-F94F8DA8781F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8583DBC-901F-43E8-B062-618A41D65A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8583DBC-901F-43E8-B062-618A41D65A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8583DBC-901F-43E8-B062-618A41D65A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8583DBC-901F-43E8-B062-618A41D65A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC886BAF-1FA4-4D15-933D-1E2760E13DB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC886BAF-1FA4-4D15-933D-1E2760E13DB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC886BAF-1FA4-4D15-933D-1E2760E13DB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC886BAF-1FA4-4D15-933D-1E2760E13DB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

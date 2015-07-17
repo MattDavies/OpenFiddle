@@ -11,10 +11,19 @@ namespace OpenFiddle.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogRepository _logRepository;
+        private readonly IFiddleRepository _fiddleRepository;
+
+        public HomeController(ILogRepository logRepository, IFiddleRepository fiddleRepository)
+        {
+            _logRepository = logRepository;
+            _fiddleRepository = fiddleRepository;
+        }
+
         [HttpPost]
         public ActionResult Run(CodeViewModel vm)
         {
-            new LogRepository().Insert(new Log{InputCode = vm.InputCode, IpAddress = Request.UserHostAddress });
+            _logRepository.Insert(new Log { InputCode = vm.InputCode, IpAddress = Request.UserHostAddress });
 
             return new ContentResult { Content = CompileHelper.CompileAndRun(vm.InputCode) };
         }
@@ -22,13 +31,13 @@ namespace OpenFiddle.Controllers
         [HttpPost]
         public ActionResult Save(CodeViewModel vm)
         {
-            new LogRepository().Insert(new Log { InputCode = vm.InputCode, IpAddress = Request.UserHostAddress });
+            _logRepository.Insert(new Log { InputCode = vm.InputCode, IpAddress = Request.UserHostAddress });
 
             string id = null;
 
             if (!string.IsNullOrEmpty(vm.Id))
             {
-                var fiddle = new FiddleRepository().Get(vm.Id);
+                var fiddle = _fiddleRepository.Get(vm.Id);
                 if (fiddle != null)
                     id = fiddle.Id;
             }
@@ -43,14 +52,14 @@ namespace OpenFiddle.Controllers
             }
 
             var result = CompileHelper.CompileAndRun(vm.InputCode);
-            new FiddleRepository().Insert(new Fiddle { InputCode = vm.InputCode, Id = id, Result = result });
+            _fiddleRepository.Insert(new Fiddle { InputCode = vm.InputCode, Id = id, Result = result });
 
             return new JsonResult {Data = new {id, result}};
         }
 
         public ActionResult Show(string id)
         {
-            var fiddle = new FiddleRepository().Get(id);
+            var fiddle = _fiddleRepository.Get(id);
             if (fiddle == null)
                 return RedirectToAction("Index");
 
