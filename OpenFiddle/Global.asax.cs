@@ -3,6 +3,9 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Autofac;
+using Autofac.Integration.Mvc;
+using OpenFiddle.Database.Repositories;
 
 namespace OpenFiddle
 {
@@ -56,11 +59,24 @@ namespace OpenFiddle
             BundleTable.EnableOptimizations = false;
         }
 
+        private static void RegisterDependencies()
+        {
+            var builder = new ContainerBuilder();
+            builder.RegisterType<LogRepository>().AsImplementedInterfaces().InstancePerRequest();
+            builder.RegisterType<FiddleRepository>().AsImplementedInterfaces().InstancePerRequest();
+            builder.RegisterControllers(typeof(MvcApplication).Assembly).InstancePerRequest();
+            builder.RegisterAssemblyModules(typeof(MvcApplication).Assembly);
+            builder.RegisterModule<AutofacWebTypesModule>();
+            var container = builder.Build();
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+        }
+
         protected void Application_Start()
         {
             RegisterApiRoutes(GlobalConfiguration.Configuration);
             RegisterMvcRoutes(RouteTable.Routes);
             RegisterBundles(BundleTable.Bundles);
+            RegisterDependencies();
         }
     }
 }

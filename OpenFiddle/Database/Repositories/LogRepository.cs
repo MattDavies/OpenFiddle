@@ -5,7 +5,12 @@ using OpenFiddle.Database.Entities;
 
 namespace OpenFiddle.Database.Repositories
 {
-    public class LogRepository
+    public interface ILogRepository
+    {
+        void Insert(Log fiddle);
+    }
+
+    public class LogRepository : ILogRepository
     {
         private CloudTable _table;
 
