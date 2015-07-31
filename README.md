@@ -12,8 +12,8 @@ PRs welcome! Grab me on twitter at [@mdaviesnet](http://twitter.com/mdaviesnet) 
 Roadmap
 -------
 
-1. Additional languages
-2. Mobile support
+1. ~~Additional languages~~
+2. ~~Mobile support~~
 3. Intellisense/Autocomplete
 4. NuGet package support
 5. A basic test runner

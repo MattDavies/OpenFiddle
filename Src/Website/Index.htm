@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Open Fiddle</title>
+    <link href="/content/bootstrap-theme.css" media="all" rel="stylesheet" />
+    <link href="/content/bootstrap.css" media="all" rel="stylesheet" />
+    <link href="/content/styles.css" media="all" rel="stylesheet" />
+    <link href="/content/console.css" media="all" rel="stylesheet" />
+    <link href="/content/script.css" media="all" rel="stylesheet" />
+    <link href="/content/mvc.css" media="all" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid" ng-cloak>
+        <header class="row site-header">
+            <nav class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <ul class="list-inline">
+                        <li>
+                            <h1>Open Fiddle</h1>
+                        </li>
+                        <li>
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="#/console">Console</a>
+                                </li>
+                                <li>
+                                    <a href="#/script">Script</a>
+                                </li>
+                                <!--<li ng-show="loggedIn">
+                                    <a href="" ng-click="logout()">{{username}} | Sign Out</a>
+                                </li>
+                                <li ng-hide="loggedIn">
+                                    <a href="#/signin">Sign In</a>
+                                </li>
+                                <li ng-hide="loggedIn">
+                                    <a href="#/register">Register</a>
+                                </li>-->
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="row site-body">
+            <div ng-view>
+            </div>
+        </div>
+        <div class="row site-footer">
+            <div class="col-md-10 col-md-offset-1">
+                <footer>
+                    <div class="text-right">
+                        Open Fiddle &copy;
+                        <script>document.write(new Date().getFullYear())</script>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/angular.js"></script>
+    <script src="/scripts/angular-route.js"></script>
+    <script src="/scripts/angular-cookies.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/controllers/signInCtrl.js"></script>
+    <script src="/app/controllers/registerCtrl.js"></script>
+    <script src="/app/controllers/consoleCtrl.js"></script>
+    <script src="/app/controllers/scriptCtrl.js"></script>
+
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/ace.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/ext-searchbox.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/ext-spellcheck.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/ext-static_highlight.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/ext-textarea.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/keybinding-emacs.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/keybinding-vim.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-abap.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-asciidoc.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-c9search.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-c_cpp.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-clojure.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-coffee.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-coldfusion.js"></script>
+    <script src="//cdn.jsdelivr.net/ace/1.1.9/min/mode-csharp.js"></script>
+    <script src="/scripts/ace/theme-visualstudio.js"></script>
+</body>
+</html>
