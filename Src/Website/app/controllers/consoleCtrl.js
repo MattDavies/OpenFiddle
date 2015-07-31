@@ -87,15 +87,19 @@
         $scope.postSave = function () {
             var input =
                 {
-                    Id: $sc.id,
+                    Id: $scope.id,
                     Code: editor.getValue(),
                     Language: $scope.language
                 };
 
             if ($scope.code != '') {
-                $http.post('/api/IDE/Save', input)
+                $http.post('/api/Console/Save', input)
                     .success(function (data, status, headers, config) {
-                        
+                        editor.setValue(data.Code);
+                        $scope.output = data.Output;
+                        $scope.id = data.Id;
+                        $location.hash('consoleOutput');
+                        $anchorScroll();
                     });
             }
         }

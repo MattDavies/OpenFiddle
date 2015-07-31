@@ -14,6 +14,7 @@ namespace OpenFiddle.Tests.Controllers
     [TestClass]
     public class ConsoleControllerTest
     {
+
         [TestMethod]
         public void RunHelloWorld()
         {
